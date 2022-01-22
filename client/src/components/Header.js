@@ -6,7 +6,7 @@ function Header() {
     <>
       <div id="header">
         hhhhhhhhhhhhh
-        <h1>Title: hhhhhhhhhhhhhhhhh</h1>
+        <h1>header</h1>
         <div id="linkContainer">
           <Link to="/" id="homeLink">
             Home

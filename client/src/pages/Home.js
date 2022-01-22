@@ -4,7 +4,7 @@ function About() {
   return (
     <>
       <h1 ClassName="AboutPage">WELCOME TO ABOUT</h1>
-      <div>About devJornall</div>
+      <div>About devJornall, introduction</div>
     </>
 
   );
