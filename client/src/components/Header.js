@@ -5,7 +5,6 @@ function Header() {
   return (
     <>
       <div id="header">
-        hhhhhhhhhhhhh
         <h1>header</h1>
         <div id="linkContainer">
           <Link to="/" id="homeLink">

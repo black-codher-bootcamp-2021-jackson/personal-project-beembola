@@ -1,24 +1,29 @@
-import { BrowserRouter, Route } from "react-router-dom";
-import { Link } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { Link } from 'react-router-dom';
 import Header from "./components/Header";
 // import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import WalkThrough from "./pages/WalkThrough";
 import Features from "./pages/Features"
 import Login from "./pages/Login";
+
 function App() {
 
   return (
     <BrowserRouter>
+    <Routes>
       <Route
         exact
         path="/"
-        render={() => (
+        element={
           <>
             <Header />
             <Footer />
           </>
-        )}
+        }
+        // element={<Header />}
+
       />
 
       <Route
@@ -48,6 +53,7 @@ function App() {
           </>
         )}
       />
+      </Routes>
     </BrowserRouter>
   );
 }
