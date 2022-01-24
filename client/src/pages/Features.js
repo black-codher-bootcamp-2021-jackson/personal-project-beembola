@@ -7,10 +7,10 @@ function Features(){
         <h1 ClassName="FeaturesPage"> APP FEAUTURES</h1>
         <div>
       <ul>
-          <li>LOGIN</li>
-          <li>LOGIN</li>
-          <li>LOGIN</li>
-          <li>LOGIN</li>
+          <li>Step 1</li>
+          <li>Step 2</li>
+          <li>Step 3</li>
+          <li>Step 4</li>
 
       </ul>
            

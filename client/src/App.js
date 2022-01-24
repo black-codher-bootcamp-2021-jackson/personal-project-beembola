@@ -5,54 +5,58 @@ import Header from "./components/Header";
 // import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import WalkThrough from "./pages/WalkThrough";
-import Features from "./pages/Features"
+import Features from "./pages/Features";
 import Login from "./pages/Login";
+import About from "./components/About"
+import Pomodoro from "./components/Pomodoro";
+import Todos from "./components/TodosContainer";
 
 function App() {
-
   return (
     <BrowserRouter>
-    <Routes>
-      <Route
-        exact
-        path="/"
-        element={
-          <>
-            <Header />
-            <Footer />
-          </>
-        }
-        // element={<Header />}
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Header />
+              <About />
+              <Pomodoro />
+             < Todos />
+              <Footer  />
+            </>
+          }
+          // element={<Header />}
+        />
 
-      />
-
-      <Route
-        exact
-        path="/WalkThrough"
-        render={() => (
-          <>
-            <WalkThrough />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/Features"
-        render={() => (
-          <>
-            <Features />
-          </>
-        )}
-      />
-      <Route
-        exact
-        path="/Login"
-        render={() => (
-          <>
-          <Login/>
-          </>
-        )}
-      />
+        <Route
+          exact
+          path="/WalkThrough"
+          element={
+            <>
+              <WalkThrough />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/Features"
+          element={
+            <>
+              <Features />
+            </>
+          }
+        />
+        <Route
+          exact
+          path="/Login"
+          element={
+            <>
+              <Login />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
