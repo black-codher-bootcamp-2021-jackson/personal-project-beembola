@@ -7,10 +7,9 @@ import Footer from "./components/Footer";
 import WalkThrough from "./pages/WalkThrough";
 import Features from "./pages/Features";
 import Login from "./pages/Login";
-import About from "./components/About"
+import About from "./components/About";
 import Pomodoro from "./components/Pomodoro";
-import Todos from "./components/TodosContainer";
-
+import NoteList from "./components/NoteList";
 function App() {
   return (
     <BrowserRouter>
@@ -22,9 +21,10 @@ function App() {
             <>
               <Header />
               <About />
+              <NoteList />
+
               <Pomodoro />
-             < Todos />
-              <Footer  />
+              <Footer />
             </>
           }
           // element={<Header />}

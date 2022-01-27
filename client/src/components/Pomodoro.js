@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Todos.css";
+import "../styles/Pomodoro.css";
 
 function Pomodoro() {
   return (
