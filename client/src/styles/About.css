@@ -1,0 +1,32 @@
+#About{
+    background-color: blueviolet;
+}
+
+.AboutContainer{
+background: url('../images/aboutHero.jpg') no-repeat right/cover;
+height: 500px ;
+/* width: 100%; */
+}
+.AboutContainer h1{
+   
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.AboutContainer p{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+ .btn{
+display:inline-block ;
+margin: 1rem 0;
+color: white;
+font-size: 10px;
+font-weight: 400;
+background-color: rgb(223, 166, 166);
+border-radius: 5px;
+border: none;
+padding: 0.8rem 1rem 0.9rem;
+}
+.btn:hover{
+background: #008ee8;
+}
