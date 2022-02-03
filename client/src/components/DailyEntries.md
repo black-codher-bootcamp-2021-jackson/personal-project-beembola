@@ -1,6 +1,9 @@
+```
 ***************************************************************************************
   DayEntries
   *****************************************************************************************
+  ClientSide
+
   *Component* 
 -First I created components folder called components, which will allow me to breakdown my applications into parts which can be composed to make more complex.
 -The root components holds all component UIs
@@ -21,3 +24,22 @@ TodoNote:
 ---create a note component in a sticky note formate, where user can create, modifty and delete note, NoteList will act like parent components, the sectionhhold, title.date and cone to have delete icon. span hold the text
 NoteList: 
 
+login:
+--- created responsive login form component
+-- creeated something that let user knows they on login page
+-- when someone type in username and password, i want to keep track on what they type in
+-- add onclick listerner to register what they do
+-by doing that i added http regestet to a backend
+-use  useState , use state allow us to update
+- i want to make sure when some type in and changed
+
+serverSide:
+installtion of libraries and dependencies
+-conected tp mongp - this will allow me to store tasks in the database, so when i reset the server , i dont get logout
+-mondodb cluster allow us to host our data in a cloud server, instead of hosting the data in local machine
+-i firstconnect to to cluster by connecting my application
+-i copied the conection string
+-.env made our application to be more secures(env wont be pushed to git up, it not accessable)
+
+
+```

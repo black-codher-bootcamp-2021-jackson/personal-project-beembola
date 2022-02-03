@@ -1,22 +1,22 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+
 function Features(){
     return (
-        <>
-        
-        <h1 ClassName="FeaturesPage"> APP FEAUTURES</h1>
+        <div ClassName="FeaturesPage"Features>
+        <h1 className="title">we provide user experience personal notes </h1>
         <div>
       <ul>
-          <li>Step 1</li>
-          <li>Step 2</li>
-          <li>Step 3</li>
-          <li>Step 4</li>
+          <li>free to to use, join sign up</li>
+          <li>add note/set personal kanban </li>
+          <li>set pomodoro timer</li>
+          <li>search for tasks</li>
+          <li>security and private</li>
+          <li>access via github / internet</li>
 
       </ul>
            
         </div>
-        
-        </>
+        </div>
     )
 }
 export default Features;
