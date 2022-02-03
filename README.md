@@ -49,6 +49,8 @@ Read the `client/` [README](./client/README.md) for more details of the example 
 The server folder is where you will store your backend code. You'll be building your API and making queries to your database here.
 
 ✋🏾 **Put your Node code here**✋🏾
+mongodb+srv://bimbola:<password>@cluster0.0wyvj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
 
 Read the `server/` [README](./server/README.md) for more details of the example API provided
 
@@ -63,7 +65,7 @@ In here you should assign your database connection string to the `DATABASE_CONNE
 Make sure your connection string has the correct database name you are trying to connect to and follows this format:
 
 ```plain
-mongodb+srv://<username>:<password>@cluster0.7k5er.mongodb.net/<database_name>
+
 ```
 
 For the example app the database name is `example_db`.

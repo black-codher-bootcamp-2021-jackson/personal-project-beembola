@@ -1,0 +1,17 @@
+#WalkThrough{
+background-color: bisque;
+}
+
+.stepByStepguide{
+font-family: 'Times New Roman', Times, serif;
+font-weight: 300;
+align-items: center;
+color: blue;
+background-color: blueviolet;
+}
+
+.steps{
+display: flex;
+justify-items: center;
+background-color: brown;
+}

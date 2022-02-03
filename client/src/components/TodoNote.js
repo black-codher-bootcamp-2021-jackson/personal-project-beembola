@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles/TodoNote.css";
-// import { AiFillDelete } from "react-icons/fa";
-// https://react-icons.github.io/react-icons
+// https://emojipedia.org/wastebasket/
 //stickNote kind of kanban
 const TodoNote = () => {
   return (
@@ -9,10 +8,15 @@ const TodoNote = () => {
       <span> Personal board </span>
       <div className="Note-takingFooter">
         <date>26/01/2021</date>
-        {/* <div className="deleteIcon"  size='1.2em'/>
+        <div className="deleteIcon"  size='1.2em'/>
         <h3>
-          <AiFillDelete />
-          </h3> */}
+        ✔️❌🗑️  
+          </h3>
+          
+            <button className="addBtn">
+            +add
+            </button>
+          
         </div>
       </div>
     
