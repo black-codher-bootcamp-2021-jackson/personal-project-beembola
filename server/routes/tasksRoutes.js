@@ -1,14 +1,23 @@
 const mongoose = require("mongoose");
-const tasks = mongoose.model("notes");
+const notes = mongoose.model("notes");
 
-const tasksRoutes = (app) => {
-
+const NoteRoute = (app) => {
+// created method to get all notes
   app.get(`/`, async (req, res) => {
-    tasks.find()
+    const results = await notes.find()
+    console.log(results);
     // const profiles = await Profile.find();
-
+    return res.status(200).send(results);
     // return res.status(200).send(profiles);
   });
+
+  app.get(`/api/notes`, async (req, res) => {
+    const results = await notes.find()
+    console.log(results);
+    // const profiles = await Profile.find();
+    return res.status(200).send(results);
+  });
+
 
   app.post(`/api/notes`, async (req, res) => {
     // const profile = await Profile.create(req.body);
@@ -42,6 +51,6 @@ const tasksRoutes = (app) => {
   });
 };
 
-module.exports = tasksRoutes;
+module.exports = NoteRoute;
 //https://www.studytonight.com/post/notepad-app-using-nodejs-mongodb-and-express
 // https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/

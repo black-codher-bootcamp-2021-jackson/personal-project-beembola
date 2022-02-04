@@ -8,7 +8,7 @@ const [passWord, setPassWord] = useState("");
     
   return (
     <div>
-      <h1>Sign/Signup</h1>
+      <h1>SignIn/Register</h1>
 <form>
     <input onChange={(e)=> setUserName(e.target.value)}
       placeholder ="UserName"
