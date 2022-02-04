@@ -9,23 +9,19 @@ db.notes.drop();
 // Insert a few documents into the profiles collection.
 db.notes.insertMany([  
     {
-        "id": "",
-        "last_name": "Akumanyi",
-        "location": "London"
+        "title": " learning Js",
+        "description": " to learn codewars",
     },
     {
-        "first_name": "Gary",
-        "last_name": "McPherson",
-        "location": "London"
+          "title": " learning pyton",
+        "description": " to learn codewars",
     },
     {
-        "first_name": "Tanya",
-        "last_name": "Powell",
-        "location": "London"
+           "title": " learning Java",
+        "description": " to learn codewars",
     },
     {
-        "first_name": "Michael",
-        "last_name": "Hael",
-        "location": "Port Harcourt city"
+            "title": " learning Js",
+        "description": " to learn codewars",
     }
 ]);

@@ -40,6 +40,28 @@ installtion of libraries and dependencies
 -i firstconnect to to cluster by connecting my application
 -i copied the conection string
 -.env made our application to be more secures(env wont be pushed to git up, it not accessable)
+-set up and config mongodb and schema
+-i removed comment out some of the profiles route that was generated my the course leader(Tanya)
+- i change and replicate the readymade profiles schema/file 
+-i require moongose aand the notes modes before i can use or connected to server
+- i used moogose for mongodb and console looging i use moongos.
+-My server will  listen to port 8080
+-body-parse is used to pull posted infomation
+-i check to make sure the mongodb schema and added object
+-i created a method to get all notes
+- i need schema and a model in order to work with data that will involved in mongodb. the schema is used to define the structure of the documents within the collection and models is used to create data that will be stored in documents
+- I  started up  by creating  notes schema AND MODEL
+- According to the course leader Tanya,  mongodb will automaticall generate an id for each notes that i created, so i create title and description
+-based on the routes in taskRoutes.js , here i a table to show how the mongobd/server should request data from api
 
+METHOD        URL                     DESCRIPTION
+GET                /api/                    get  allnotes
+GET                /api/notes             get  single notes
+GET                /api/notes/:note_id             get  note id notes
+
+Post              /api/notes             get  allnotes
+delete                /api/notes             get  allnotes
+
+- since i already  created the model on note.js const notes =mongoose.model("notes", NotesSchema), now i can use Nodes to get GET,POST and delete
 
 ```

@@ -1,25 +1,31 @@
-import React from "react";
+import React ,  { useEffect}   from "react";
 import TodoNote from "../components/TodoNote";
+import  {getAllNotes} from '../services/taskServices';
 //noteidea: might have draggable kanband board features, stil thinking
-const NoteList = () => {
+const NoteList = () =>  { 
+  useEffect( async( )  => {
+  const notes = await getAllNotes();
+  console.log(notes);
+  },[])
   return (
     <div className="NoteListContainer">
-      <h3 className="todoIcon">
-      📝Todo
+      <div className="todoIcon">
+      <h3>📝Todo</h3>
         <TodoNote />
-      </h3>
-      <h3 className="inprogressIcon">
-      ⌛In-progress
+        
+      </div>
+      <div className="inprogressIcon">
+      <h3>⌛In-progress </h3>
         <TodoNote />
-      </h3>
-      <h3 className="reviewIcon">
-      👁️ In Review
+      </div>
+      <div className="reviewIcon">
+      <h3>👁️ In Review </h3>
         <TodoNote />
-      </h3>
-      <h3 className="doneIcon">
-      ✔️Done
+      </div>
+      <div className="doneIcon">
+      <h3>✔️Done </h3>
         <TodoNote />
-      </h3>
+      </div>
     </div>
   );
 

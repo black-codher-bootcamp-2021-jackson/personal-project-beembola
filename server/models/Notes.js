@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const TaskSchema = new Schema({
+const NotesSchema = new Schema({
   title: {
     type: "String",
     required: true,
@@ -12,8 +12,8 @@ description: {
 });
 
 
-const tasks =mongoose.model("notes", TaskSchema);
-module.export = tasks
+const notes =mongoose.model("notes", NotesSchema);
+module.export = notes
 
 // {
 //   [uuid()]: {
