@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const res = require("express/lib/response");
 
 // IMPORT YOUR SCHEMAS HERE
-const apiRout = require("./models/Notes"); //This is just an example. Don't forget to delete this
+const apiRout = require("./models/Tasks"); //This is just an example. Don't forget to delete this
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 // app.get('/', (req, res) => res.send('Hello world!')
 // )
-const task = require("./routes/tasksRoutes")(app); 
+const Task = require("./routes/taskRoutes")(app); 
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

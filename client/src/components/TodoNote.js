@@ -7,40 +7,53 @@ const TodoNote = () => {
 const[addNote ,setAddNote] = useState([
   {
     title: "learn JS",
-    todo: true
+    // todo: false, 
+    // Inprogress:true,
+    // InReview: false,
+    // Done: false,
+  status: 1    
   },
   {
     title: "Do your workout",
     Inprogress: true,
+    status: 2    
+
   },
   {
     title: "Do your workout",
     InReview: true,
+    status: 3
+
   },
   {
     title: "Do your workout",
-    Done: false
+    Done: false,
+    status: 4   
+
   },
 ]);
-const addNewTodo = title =>{
-  const addNewNotes = [...addNote, {title, todo: true }];
-  setAddNote(addNewNotes);
-}
+//notelist = 
+//list component 
+// const addNewTodo = title =>{
+//   const addNewNotes = [...addNote, {title, todo: true }];
+//   setAddNote(addNewNotes);
+// }
 
-const addInprogress = title =>{
-  const addNewNotes = [...addNote, {title, Inprogress: true }];
-  setAddNote(addNewInProgress);
-}
-const addInReview = index =>{
-  const addNewNotes = [...addNote, {title, InReview: true }];
-  setAddNote(addInReview);
-}
+// const addInprogress = title =>{
+//   const addNewNotes = [...addNote, {title, Inprogress: true }];
+//   setAddNote(addNewInProgress);
+// }
 
-const addRemoveNote = index =>{
-  const addNewNotes = [...addNote, {title, InReview: true }];
-  addNewNotes.splice(index, 1);
-  setAddNote(addRemoveNote);
-}
+// const addInReview = index =>{
+//   const addNewNotes = [...addNote, {title, InReview: true }];
+//   setAddNote(addInReview);
+// }
+
+// const addRemoveNote = index =>{
+//   const addNewNotes = [...addNote, {title, InReview: true }];
+//   addNewNotes.splice(index, 1);
+//   setAddNote(addRemoveNote);
+// }
   return (
     <div className="NoteSection">
       <span> Personal board </span>
@@ -52,17 +65,17 @@ const addRemoveNote = index =>{
           </h3>
 
 
-          {addNote.map((note, index) =>(
+          {/* {addNote.map((note, index) =>(
             <addNote 
                     note={note}
                     todo={todo}
                     key={index}
-                    />
-          )
-          )}
+                    /> */}
+          {/* )
+          )} */}
           set state and map through
             <button className="addBtn">
-            +add
+            +addCards
             </button>
           
         </div>
