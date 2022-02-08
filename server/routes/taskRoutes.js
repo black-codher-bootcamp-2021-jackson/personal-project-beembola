@@ -1,23 +1,24 @@
 const mongoose = require("mongoose");
-const notes = mongoose.model("notes");
+const Task = mongoose.model("tasks");
 
-const NoteRoute = (app) => {
+const TaskRoute = (app) => {
 // created method to get all notes
-  app.get(`/`, async (req, res) => {
-    const results = await notes.find()
+  // app.get(`/`, async (req, res) => {
+  //   const results = await notes.find()
+  //   console.log(results);
+  //   // const profiles = await Profile.find();
+  //   return res.status(200).send(results);
+  //   // return res.status(200).send(profiles);
+  // });
+
+  app.get(`/api/tasks`, async (req, res) => {
+    const Tasks = await Tasks.find({userId: req.params.id})
     console.log(results);
     // const profiles = await Profile.find();
     return res.status(200).send(results);
-    // return res.status(200).send(profiles);
   });
-
-  app.get(`/api/notes`, async (req, res) => {
-    const results = await notes.find()
-    console.log(results);
-    // const profiles = await Profile.find();
-    return res.status(200).send(results);
-  });
-
+//findtask by id
+//
 
   app.post(`/api/notes`, async (req, res) => {
     // const profile = await Profile.create(req.body);
@@ -28,7 +29,7 @@ const NoteRoute = (app) => {
     // });
   });
 
-  app.put(`/api/notes/:id`, async (req, res) => {
+  app.put(`/api/task/:id`, async (req, res) => {
     // const { id } = req.params;
 
     // const profile = await Profile.findByIdAndUpdate(id, req.body);
@@ -51,6 +52,6 @@ const NoteRoute = (app) => {
   });
 };
 
-module.exports = NoteRoute;
+module.exports = TaskRoute;
 //https://www.studytonight.com/post/notepad-app-using-nodejs-mongodb-and-express
 // https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
