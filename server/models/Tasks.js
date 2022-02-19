@@ -5,25 +5,25 @@ const TaskSchema = new Schema({
 
 description:String,
 userId: String,
-status : int,
-dueDate: date,
-startDate :date,
-priority :int
+status : Number,
+dueDate: Date,
+startDate :Date,
+priority :Number
 });
 
-
+//Task Schema or Document structure
 const Task =mongoose.model("tasks", TaskSchema);
 module.export = Task
 
-// {
-//   [uuid()]: {
-// name: 'Todo'
-// },
-// {
+
 //   [uuid()]: {
 // name: 'In progress'
 // },
 // };
-// 3. Four routes (`GET`, `POST`, `UPDATE` and `DELETE` requests)
+// 3. Four// {
+//   [uuid()]: {
+// name: 'Todo'
+// },
+// { routes (`GET`, `POST`, `UPDATE` and `DELETE` requests)
 
 //https://betterprogramming.pub/build-a-notes-app-with-google-authentication-in-node-js-e0c3dea761e1

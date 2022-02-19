@@ -35,7 +35,7 @@ login:
 
 serverSide:
 installtion of libraries and dependencies
--conected tp mongp - this will allow me to store tasks in the database, so when i reset the server , i dont get logout
+-connected to mongodp - this will allow me to store tasks in the database, so when i reset the server , i dont get logout
 -mondodb cluster allow us to host our data in a cloud server, instead of hosting the data in local machine
 -i firstconnect to to cluster by connecting my application
 -i copied the conection string
@@ -43,16 +43,16 @@ installtion of libraries and dependencies
 -set up and config mongodb and schema
 -i removed comment out some of the profiles route that was generated my the course leader(Tanya)
 - i change and replicate the readymade profiles schema/file 
--i require moongose aand the notes modes before i can use or connected to server
+-i require moongose and the notes notes  before i can use or connected to server
 - i used moogose for mongodb and console looging i use moongos.
 -My server will  listen to port 8080
 -body-parse is used to pull posted infomation
 -i check to make sure the mongodb schema and added object
--i created a method to get all notes
+-i created a verbs method to get all notes
 - i need schema and a model in order to work with data that will involved in mongodb. the schema is used to define the structure of the documents within the collection and models is used to create data that will be stored in documents
 - I  started up  by creating  notes schema AND MODEL
 - According to the course leader Tanya,  mongodb will automaticall generate an id for each notes that i created, so i create title and description
--based on the routes in taskRoutes.js , here i a table to show how the mongobd/server should request data from api
+-based on the routes in taskRoutes.js , table to show how the mongobd/server should request data from api
 
 METHOD        URL                     DESCRIPTION
 GET                /api/                    get  allnotes

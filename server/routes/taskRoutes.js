@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Task = mongoose.model("tasks");
+const Tasks = mongoose.model("tasks");
 
 const TaskRoute = (app) => {
 // created method to get all notes
@@ -12,22 +12,29 @@ const TaskRoute = (app) => {
   // });
 
   app.get(`/api/tasks`, async (req, res) => {
-    const Tasks = await Tasks.find({userId: req.params.id})
-    console.log(results);
+    const tasks= await Tasks.find({userId: req.params.id})
+    console.log(tasks);
     // const profiles = await Profile.find();
-    return res.status(200).send(results);
+    return res.status(200).send(tasks);
   });
 //findtask by id
 //
 
-  app.post(`/api/notes`, async (req, res) => {
+  app.post(`/api/tasks`,  (req, res) => {
+    const task  =  Tasks.create(req.body);
+console.log( req.body)
+        return res.status(201).send({
+          error: false,
+          task,
+        });
+      });
     // const profile = await Profile.create(req.body);
 
     // return res.status(201).send({
     //   error: false,
     //   profile,
     // });
-  });
+  
 
   app.put(`/api/task/:id`, async (req, res) => {
     // const { id } = req.params;

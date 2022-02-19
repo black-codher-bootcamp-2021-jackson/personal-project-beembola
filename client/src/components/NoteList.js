@@ -3,7 +3,6 @@ import TodoNote from "../components/TodoNote";
 import  {getAllNotes} from '../services/taskServices';
 //noteidea: might have draggable kanband board features, stil thinking
 const NoteList = () =>  { 
-
   
   useEffect( async( )  => {
   const notes = await getAllNotes();
@@ -18,15 +17,15 @@ const NoteList = () =>  {
       </div>
       <div className="inprogressIcon">
       <h3>⌛In-progress </h3>
-        <TodoNote />
+        {/* <TodoNote /> */}
       </div>
       <div className="reviewIcon">
       <h3>👁️ In Review </h3>
-        <TodoNote />
+        {/* <TodoNote /> */}
       </div>
       <div className="doneIcon">
       <h3>✔️Done </h3>
-        <TodoNote />
+        {/* <TodoNote /> */}
       </div>
     </div>
   );
