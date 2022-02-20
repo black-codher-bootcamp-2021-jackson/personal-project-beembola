@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState, useEffect} from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { Link } from 'react-router-dom';
 import Header from "./components/Header";
@@ -10,7 +10,25 @@ import Login from "./pages/Login";
 import About from "./components/About";
 import Pomodoro from "./components/Pomodoro";
 import NoteList from "./components/NoteList";
+import { getAllTasks } from "./services/taskServices";
+
 function App() {
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    async function getTasks() {
+      if (tasks) {
+        const response = await getAllTasks();
+        console.log(response)
+
+        setTasks(response);
+      }
+    }
+
+    getTasks();
+  }, [tasks]);
+
+
   return (
     <BrowserRouter>
       <Routes>
@@ -21,7 +39,7 @@ function App() {
             <>
               <Header />
               <About />
-              <NoteList />
+              <NoteList  taskList={tasks}/>
 
               <Pomodoro />
               <Footer />
