@@ -12,7 +12,7 @@ const TaskRoute = (app) => {
   // });
 
   app.get(`/api/tasks`, async (req, res) => {
-    const tasks= await Tasks.find({userId: req.params.id})
+    const tasks= await Tasks.find()
     console.log(tasks);
     // const profiles = await Profile.find();
     return res.status(200).send(tasks);

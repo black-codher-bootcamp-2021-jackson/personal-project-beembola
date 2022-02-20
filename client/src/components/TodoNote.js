@@ -4,9 +4,11 @@ import React, { useState } from "react";
 // https://emojipedia.org/wastebasket/
 //stickNote kind of kanban
 
-const TodoNote = () => {
+const TodoNote = (props) => {
   const [newTask, setNewTask] = useState("");
-
+const [UserId, setUserId] =useState(10);
+const [currentDate, setCurrentDate] =useState(new Date());
+console.log(currentDate)
   const [addNote, setAddNote] = useState([
     {
       title: "learn JS",
@@ -54,13 +56,24 @@ const TodoNote = () => {
   //   addNewNotes.splice(index, 1);
   //   setAddNote(addRemoveNote);
   // }
+  
+  const listItems = props.tasks.map((item, index) =>
+    <li key={index}>
+      <div><h1>{item.description}</h1>
+</div>
+    </li>
+  );
+  
+
   return (
     <div className="NoteSection">
       <span> Personal board </span>
+<ul>{listItems}</ul>
       <div className="Note-takingFooter">
         <date>26/01/2021</date>
         <div className="deleteIcon" size="1.2em" />
         <h3>✔️❌🗑️</h3>
+
         {/* {addNote.map((note, index) =>(
             <addNote 
                     note={note}
@@ -81,7 +94,13 @@ const TodoNote = () => {
         <button
           className="addBtn"
           onClick={() => {
-            setAddNote(addNote.concat({ task: newTask }));
+            setAddNote(addNote.concat({description: newTask,
+              userId: UserId,
+              status: 0,
+              dueDate: new Date(currentDate.getTime() + 86400000 * duration), //using start date to calculate,add 7days to current day
+              startDate: currentDate,
+              priority: priority
+              }));
             console.log(addNote);
           }}
         >
