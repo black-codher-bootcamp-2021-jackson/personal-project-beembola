@@ -1,26 +1,42 @@
 import React from "react";
 import "../styles/Walkthrough.css";
+import stepOne from "../images/stepOne.jpg";
 
-function WalkThrough(){
-  
-    return (
-        <div  id="WalkThrough">
-        <div ClassName="stepByStepguide">A quick Walkthrough of TeckNote App </div>
+const WalkThroughCard = props =>{
+  return (
+    <div className="Walkthrough-Container">
+      <div ClassName="heading">
+        <h1> Steps by steps guild</h1>
+        <img scr={stepOne} alt=""/>
+      </div>
 
-<div ClassName="Steps">
-      <ul>
-          <li>Step 1: Sign in/login for your free TeckNote</li>
-          <img src={require('../images/stepOne.jpg')}/>
-          <li>step 2: Write your first Entry</li>
-          <img src={require('../images/stepTwo.png')}/>
-          <li>step 3:Edit and delete Notes</li>
-          <img src={require('../images/stepThree.jpg')}/>
-          <li>step 4: logout </li>
-          <img src="import from github/vscode/"/>
-      </ul>
-      </div> 
+      <div ClassName="cardsRow">
+        <div ClassName="card">
+          <div ClassName="cardHeaders">
+            Step 1: Sign in/login for your free TeckNot
+          </div>
+          <div class="card-img">
+            Step 1: Sign in/login for your free TeckNote
+            <img src={require("../images/stepOne.jpg")} />
+          </div>
+
+          <div class="card-img">
+            Step 2: Sign in/login for your free TeckNote
+            <img src={require("../images/stepTwo.png")} />
+          </div>
+
+          <div class="card-img">
+            Step 3: Sign in/login for your free TeckNote
+            <img src={require("../images/stepThree.jpg")} />
+          </div>
+
+          <div class="card-img">
+            Step 4: Sign in/login for your free TeckNote
+            <img src="import from github/vscode/" />
+          </div>
         </div>
-      
-    )
+      </div>
+    </div>
+  );
 }
-  export default WalkThrough ;
+export default WalkThroughCard;

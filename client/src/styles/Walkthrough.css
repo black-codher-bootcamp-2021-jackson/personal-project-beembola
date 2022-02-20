@@ -1,17 +1,25 @@
-#WalkThrough{
-background-color: bisque;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.stepByStepguide{
-font-family: 'Times New Roman', Times, serif;
-font-weight: 300;
-align-items: center;
-color: blue;
-background-color: blueviolet;
+body{
+    background-color: azure;
 }
 
-.steps{
-display: flex;
-justify-items: center;
-background-color: brown;
+.Walkthrough-Container{
+    width: 90%;
+margin: 50px auto;
+}
+
+.heading{
+ text-align: center;
+ font-size:30px;
+ margin-bottom: 50px;
+
+}
+
+card-img{
+    width:20%;
 }

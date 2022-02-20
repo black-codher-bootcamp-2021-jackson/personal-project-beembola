@@ -84,13 +84,22 @@ console.log(currentDate)
           )} */}
         set state and map through
         <input
-          type="task"
+          type="text"
           placeholder="Type your task here"
           value={newTask}
           onChange={(event) => {
             setNewTask(event.target.value);
           }}
+
         />
+        <input
+          type="text"
+          placeholder="Type your task here"
+          value={newTask}
+          onChange={(event) => {
+            setNewTask(event.target.value);
+          }}
+          />
         <button
           className="addBtn"
           onClick={() => {
