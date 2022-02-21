@@ -43,12 +43,10 @@ const TaskRoute = (app) => {
     return res.status(202).send({
       error: false,
       task,
-
-
     });
   });
-//Todo: find how update the status of the object 
-//
+  //Todo: find how update the status of the object
+  //
 
   app.post(`/api/inprogress`, (req, res) => {
     const task = new inprogress({
@@ -74,25 +72,67 @@ const TaskRoute = (app) => {
   //   profile,
   // });
 
-  app.put(`/api/task/:id`, async (req, res) => {
-    // const { id } = req.params;
-    // const profile = await Profile.findByIdAndUpdate(id, req.body);
-    // return res.status(202).send({
-    //   error: false,
-    //   profile,
-    // });
+  // app.put(`/api/task/:id`, async (req, res) => {
+  //   const { id } = req.params;
+  //   console.log(id);
+  //   // const profile = await Profile.findByIdAndUpdate(id, req.body);
+  //   // return res.status(202).send({
+  //   //   error: false,
+  //   //   profile,
+  //   // });
+  // });
+  app.post("/api/tasks/:id", (req, res) => {
+    //takes id that user put in the route, fis
+    Tasks.findById(req.params.id, (err, todo) => {
+      if (!todo) res.status(404).send("Data is not found");
+      else {
+        todo.description = todo.description;
+        todo.userId = todo.userId;
+        todo.status = 1; //changes
+        todo.dueDate = todo.dueDate;
+        todo.startDate = todo.startDate;
+        todo.priority = todo.priority;
+        todo
+          .save()
+          .then((todo) => {
+            //saved
+            res.json("Todo updated");
+          })
+          .catch((err) => {
+            res.status(400).send("Update not possible");
+          });
+      }
+    });
   });
-
-  app.delete(`/api/notes/:id`, async (req, res) => {
-    //   const { id } = req.params;
-    //   const profile = await Profile.findByIdAndDelete(id);
-    //   return res.status(202).send({
-    //     error: false,
-    //     profile,
-    //   });
+  app.post("/api/completed/:id", (req, res) => {
+    Tasks.findById(req.params.id, (err, todo) => {
+      if (!todo) res.status(404).send("Data is not found");
+      else {
+        todo.description = todo.description;
+        todo.userId = todo.userId;
+        todo.status = 2;
+        todo.dueDate = todo.dueDate;
+        todo.startDate = todo.startDate;
+        todo.priority = todo.priority;
+        todo
+          .save()
+          .then((todo) => {
+            res.json("Todo updated");
+          })
+          .catch((err) => {
+            res.status(400).send("Update not possible");
+          });
+      }
+    });
+  });
+  app.delete(`/api/task/:id`, async (req, res) => {
+    const { id } = req.params;
+    const task = await Tasks.findByIdAndDelete(id);
+    return res.status(202).send({
+      error: false,
+      task,
+    });
   });
 };
 
 module.exports = TaskRoute;
-//https://www.studytonight.com/post/notepad-app-using-nodejs-mongodb-and-express
-// https://www.callicoder.com/node-js-express-mongodb-restful-crud-api-tutorial/
