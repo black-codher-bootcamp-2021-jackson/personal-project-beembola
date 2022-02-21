@@ -31,22 +31,29 @@ const TodoNote = (props) => {
     console.log("function ended");
   };
 
-  const submitObjectToInprogress = () => {
-    console.log("function has started");
+  const submitObjectToInprogress = (id) => {
     axios({
       method: "POST",
-      data: {
-        description: newTask,
-        userId: UserId,
-        status: 0,
-        dueDate: new Date(currentDate.getTime() + 86400000 * duration), //using start date to calculate,add 7days to current day
-        startDate: currentDate,
-        priority: priority,
-      },
+      data: {},
       withCredentials: true,
-      url: "http://localhost:8080/api/inprogress",
+      url: "http://localhost:8080/api/tasks/"+id,
     }).then((res) => console.log(res));
-    console.log("function ended");
+  };
+  const deleteTask = (id) => {
+    axios({
+      method: "DELETE",
+      data: {},
+      withCredentials: true,
+      url: "http://localhost:8080/api/tasks/"+id,
+    }).then((res) => console.log(res));
+  };
+  const submitObjectToCompleted = (id) => {
+    axios({
+      method: "POST",
+      data: {},
+      withCredentials: true,
+      url: "http://localhost:8080/api/completed/"+id,
+    }).then((res) => console.log(res));
   };
   // const [addNote, setAddNote] = useState([
   //   {
@@ -96,42 +103,40 @@ const TodoNote = (props) => {
   //   setAddNote(addRemoveNote);
   // }
 
-  const listItems = props.tasks.map((item, index) => (
-    <li key={index}>
-      <div>
-        <h1>{item.description}</h1>
+  const listItems = props.tasks.map((item, index) => {
+    if(item.status === 0){
+      console.log(item.status);
 
+       return <li key={index}>
+      <div>
+        <h1>{item.description} </h1>
+        <p> This task is due By: {item.dueDate.slice(0,10)}</p>
         <button
           onClick={() => {
-            setNewTask(item.description);
-            setUserId(item.userId);
-            setPriority(item.priority);
-            submitObjectToInprogress();
+            submitObjectToInprogress(item._id);
           }}
         >
-          startProject
+          Start Project
+        </button>
+        <button onClick={()=>  deleteTask(item._id)}>
+          Delete Task 
         </button>
       </div>
     </li>
-  ));
+      
+    }
+  }
+    );
+    
+  
+  
 
   return (
     <div className="NoteSection">
       <span> Personal board </span>
       <ul>{listItems}</ul>
-      <div className="Note-takingFooter">
-        <date>26/01/2021</date>
-        <div className="deleteIcon" size="1.2em" />
-        <h3>✔️❌🗑️</h3>
-        {/* {addNote.map((note, index) =>(
-            <addNote 
-                    note={note}
-                    todo={todo}
-                    key={index}
-                    /> */}
-        {/* )
-          )} */}
-        set state and map through
+      <div className="Note-taking">
+
         <input
           type="text"
           placeholder="Type your task here"
@@ -178,9 +183,11 @@ const TodoNote = (props) => {
           className="addBtn"
           onClick={() => {
             submitObjectToTasks();
+            setNewTask("")
+            setDuration(0)
           }}
         >
-          +addCards
+          Add Task
         </button>
       </div>
     </div>
