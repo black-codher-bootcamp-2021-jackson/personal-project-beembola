@@ -21,7 +21,7 @@
 //     const { id } = req.params;
 
 //     const profile = await Profile.findByIdAndUpdate(id, req.body);
-
+      
 //     return res.status(202).send({
 //       error: false,
 //       profile,
