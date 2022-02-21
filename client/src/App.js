@@ -19,7 +19,7 @@ function App() {
     async function getTasks() {
       if (tasks) {
         const response = await getAllTasks();
-        console.log(response)
+        // console.log(response)
 
         setTasks(response);
       }
