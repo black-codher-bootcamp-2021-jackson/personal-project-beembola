@@ -1,0 +1,10 @@
+.completedItems {
+  display: flex;
+  align-items: center;
+}
+
+.deleteIcon {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+}

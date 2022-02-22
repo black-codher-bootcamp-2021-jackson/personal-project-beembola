@@ -1,14 +1,29 @@
 import React, { useEffect } from "react";
 import TodoNote from "../components/TodoNote";
 import axios from "axios";
+import "../styles/NoteList.css";
+
+import {
+	MdDeleteOutline,
+} from "react-icons/md";
 
 // import  {getAllTasks} from '../services/taskServices';
 //noteidea: might have draggable kanband board features, stil thinking
+
 const NoteList = (props) => {
   //   useEffect( async( )  => {
   //   const notes = await getAllNotes();
   //   console.log(notes);
   //   },[])
+  const handleDelete =(id)=>{
+    axios({
+      method: "DELETE",
+      data: {},
+      withCredentials: true,
+      url: "http://localhost:8080/api/task/" + id,
+    }).then((res) => console.log(res));
+  };
+  
   const submitObjectToCompleted = (id) => {
     axios({
       method: "POST",
@@ -44,13 +59,17 @@ const NoteList = (props) => {
 
       return (
         <li key={index}>
-          <div>
+          <div  className="completedItems">
             <h1>{item.description}</h1>
+
+            <MdDeleteOutline className="deleteIcon" onClick={() =>  handleDelete(item._id)}/>
+            {/* <button  onClick={() =>  handleDelete(item._id)}> delete</button> */}
           </div>
         </li>
       );
     }
   });
+  
   return (
     <div className="NoteListContainer">
       <div className="todoIcon">

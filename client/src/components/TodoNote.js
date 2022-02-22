@@ -40,6 +40,7 @@ const TodoNote = (props) => {
     }).then((res) => console.log(res));
   };
   const deleteTask = (id) => {
+    console.log(id)
     axios({
       method: "DELETE",
       data: {},
