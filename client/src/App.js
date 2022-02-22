@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { Link } from 'react-router-dom';
 import Header from "./components/Header";
@@ -28,7 +28,6 @@ function App() {
     getTasks();
   }, [tasks]);
 
-
   return (
     <BrowserRouter>
       <Routes>
@@ -39,7 +38,7 @@ function App() {
             <>
               <Header />
               <About />
-              <NoteList  taskList={tasks}/>
+              <NoteList taskList={tasks} />
 
               <Pomodoro />
               <Footer />

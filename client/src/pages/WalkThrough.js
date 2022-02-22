@@ -2,12 +2,12 @@ import React from "react";
 import "../styles/Walkthrough.css";
 import stepOne from "../images/stepOne.jpg";
 
-const WalkThroughCard = props =>{
+const WalkThroughCard = (props) => {
   return (
     <div className="Walkthrough-Container">
       <div ClassName="heading">
         <h1> Steps by steps guild</h1>
-        <img scr={stepOne} alt=""/>
+        <img scr={stepOne} alt="" />
       </div>
 
       <div ClassName="cardsRow">
@@ -38,5 +38,5 @@ const WalkThroughCard = props =>{
       </div>
     </div>
   );
-}
+};
 export default WalkThroughCard;

@@ -1,25 +1,24 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: azure;
+body {
+  background-color: azure;
 }
 
-.Walkthrough-Container{
-    width: 90%;
-margin: 50px auto;
+.Walkthrough-Container {
+  width: 90%;
+  margin: 50px auto;
 }
 
-.heading{
- text-align: center;
- font-size:30px;
- margin-bottom: 50px;
-
+.heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
 }
 
-card-img{
-    width:20%;
+card-img {
+  width: 20%;
 }

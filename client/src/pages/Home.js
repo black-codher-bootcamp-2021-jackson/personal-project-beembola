@@ -6,7 +6,6 @@ function About() {
       <h1 ClassName="AboutPage">WELCOME TO ABOUT</h1>
       <div>Introduction to my About page </div>
     </>
-
   );
 }
 export default About;
